@@ -1,16 +1,20 @@
-#gender.py
+A simple extension to the gender.py library to take first names as a single .csv file and return the same file with additional columns related to their gender using the genderize.io API.
 
-A simple library to take first names and return their gender using the genderize.io API.
+Usage example
+-------
+```
+python genderCsv.py ./names.csv
+```
 
-##Usage
-    >>> from gender import getGenders
-    >>> getGenders(["Brian","Apple","Jessica","Zaeem","NotAName"])
-    [(u'male', u'1.00', 483), (u'female', u'0.86', 14), (u'female', u'1.00', 787), (u'male', u'1.00', 1), (u'None', u'0.0', 0.0)]
+Resuming a partial execution (maybe due to having reached the quota limits of genderize.io):
+pass a names.csv file already containing the gender-related columns. GenderCsv.py will automatically resume the execution from the first row where the gender-related columns are not filled. 
 
-##Output
+Output
+-------
 
-Output is a list of results form the website, formated to be (name (string), probability (string), amount of documents that support the gender choice (int))
+Output is the same names.csv file with 3 additional columns (if they are not already there), namely: name (string), confidence (float), documents supporting the gender choice (int).
 
-##Requirements
+Requirements
+-------
 
-Requires requests to function for HTTP requests.
+[from gender.py] Requires requests to function for HTTP requests.
