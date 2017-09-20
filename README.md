@@ -16,7 +16,12 @@ pass a input.csv file already containing the gender-related columns. GenderCsv.p
 Output
 -------
 
-Output is the same input.csv file with 3 additional columns (if they are not already there), namely: name (string), confidence (float), documents supporting the gender choice (int).
+Output is the same input.csv file with 3 additional columns (if they are not already there), namely: 
+- gender (string), 
+- confidence (float), 
+- documents supporting the gender choice (int).
+
+The values of those 3 columns are obtained via the [genderize.io](https://genderize.io) API
 
 Requirements
 -------
